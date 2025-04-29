@@ -1,14 +1,22 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
+import ThemeContext from "../context/ThemeContext";
 
 const Product = () => {
-  const data = useParams();
+  const [count, setCount] = useState(true);
+  let a = 1000;
+  let data = useRef(1000); //{current:1000}
+
   const inputRef = useRef(); // {current: undefined}
   console.log(inputRef);
 
+  const themeData = useContext(ThemeContext);
+  console.log(themeData);
+
   const handleClick = () => {
     inputRef.current.focus();
+    console.dir(inputRef.current.value);
   };
 
   return (
@@ -39,6 +47,24 @@ const Product = () => {
       <div className="mt-6 w-full max-w-3xl">
         <Outlet />
       </div>
+      <button
+        className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300"
+        onClick={() => {
+          setCount(!count);
+        }}
+      >
+        Increase counter
+      </button>
+      {data.current}
+      <button
+        className="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700 transition duration-300"
+        onClick={() => {
+          data.current = data.current + 1000;
+          console.log(data.current);
+        }}
+      >
+        Increase data value
+      </button>
     </div>
   );
 };

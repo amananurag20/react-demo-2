@@ -17,6 +17,9 @@ const Navbar = () => {
           >
             <p>Product</p>
           </Link>
+          <Link to="/mobile" style={{ textDecoration: "none", color: "white" }}>
+            <p>Mobile</p>
+          </Link>
 
           <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
             <p>Login</p>
