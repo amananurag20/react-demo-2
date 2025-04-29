@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
 
 const Mobile = () => {
+  const data = useContext(ThemeContext);
+  console.log(data);
+
   return (
     <div>
       Mobile
