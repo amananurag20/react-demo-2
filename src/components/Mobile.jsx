@@ -10,7 +10,7 @@ const Mobile = () => {
 
   return (
     <div>
-      Mobile{userData.user.email}
+      Mobile{userData?.user?.email}
       <img src="https://www.techadvisor.com/wp-content/uploads/2025/04/best-phones-2025-1.jpg?quality=50&strip=all"></img>
     </div>
   );

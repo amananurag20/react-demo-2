@@ -9,18 +9,24 @@ import Footer from "./Footer";
 import Header from "./Header";
 import ItemCard from "./ItemCard";
 import ThemeContext from "../context/ThemeContext";
+import { useDispatch } from "react-redux";
+import { addItem } from "../store/cartSlice";
 
 const HomePage = () => {
   const [count, setCount] = useState(1000);
+  const dispatch = useDispatch();
 
   console.log("homepage rendered");
 
-  // const handleClick = useMemo(() => {
-  //   return () => {
-  //     setCount(count + 1000);
-  //     console.log(count);
-  //   };
-  // }, [count]);
+  const handleAddCart = () => {
+    let item = {
+      name: "mobile",
+      price: "20000",
+      brand: "samsung",
+      rating: "2000",
+    };
+    dispatch(addItem(item));
+  };
 
   const handleClick = useCallback(() => {
     setCount(count + 1000);
@@ -58,6 +64,13 @@ const HomePage = () => {
         Increase its value
       </button>
       <Footer data={info} count={count} setCount={setCount} />
+
+      <button
+        className="p-4 bg-red-500 text-white text-3xl"
+        onClick={handleAddCart}
+      >
+        add to cart
+      </button>
     </div>
   );
 };
