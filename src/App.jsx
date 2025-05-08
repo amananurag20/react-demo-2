@@ -11,6 +11,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import UserContext, { UserProvider } from "./context/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./store/appStore";
+import Cart from "./components/Cart";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/admin" element={<Admin />} />
+                <Route path="/cart" element={<Cart />} />
               </Routes>
             </BrowserRouter>
           </ThemeProvider>
