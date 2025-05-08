@@ -34,9 +34,12 @@ const Navbar = () => {
           <Link to="/signup" style={{ textDecoration: "none", color: "white" }}>
             <p>SignUp</p>
           </Link>
-          <h1>
+          <Link to="/admin" style={{ textDecoration: "none", color: "white" }}>
+            <p>Admin</p>
+          </Link>
+          <Link to="/cart">
             Cart<sup>{itemsData.length}</sup>
-          </h1>
+          </Link>
         </div>
       </div>
       <Outlet />

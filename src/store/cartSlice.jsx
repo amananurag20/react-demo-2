@@ -22,9 +22,10 @@ const cartSlice = createSlice({
 
     removeItem: (state, action) => {
       let removeItem = action.payload;
+      console.log({ removeItem });
 
       let filteredData = state.items.filter((item) => {
-        return item.name != removeItem.name;
+        return item.title !== removeItem.title;
       });
 
       state.items = filteredData;
